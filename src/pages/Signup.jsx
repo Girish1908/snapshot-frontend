@@ -20,8 +20,9 @@ const Signup = () => {
 
   return (
     <div className="container">
-      <h2>Signup</h2>
+       
       <form onSubmit={handleSubmit} style={{ maxWidth: 300 }}>
+        <h2>Signup</h2>
         <input
           type="text"
           placeholder="Username"
@@ -47,9 +48,12 @@ const Signup = () => {
           style={{ width: "100%", marginBottom: 10 }}
         />
         <button type="submit">Signup</button>
+        <div className="footer">
+          <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default Signup;

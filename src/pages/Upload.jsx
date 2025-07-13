@@ -40,6 +40,7 @@ const Upload = () => {
 }
 };
 
+
   return (
     <div className="container">
       <h2>Upload Photo</h2>

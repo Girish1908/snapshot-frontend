@@ -16,8 +16,23 @@ const UserProfile = () => {
   }, [id]);
 
   return (
-    <div className="container">
-      <h2>{user.username}'s Profile</h2>
+    <div className="container" style={{ textAlign: "center" }}>
+      <img
+        src={`http://localhost:5000${user.profilePhoto}`}
+        alt="Profile"
+        style={{
+          width: 100,
+          height: 100,
+          borderRadius: "50%",
+          objectFit: "cover",
+          marginBottom: 10
+        }}
+      />
+      <h2>{user.username}</h2>
+      {user.bio && <p style={{ fontStyle: "italic" }}>{user.bio}</p>}
+      <p><strong>{photos.length}</strong> Posts</p>
+
+      <hr style={{ margin: "20px 0" }} />
       {photos.map(photo => (
         <PhotoCard key={photo._id} photo={photo} />
       ))}

@@ -1,0 +1,138 @@
+.welcome-page {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  z-index: 2;
+  animation: scaleIn 1s ease;
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  z-index: 2;
+  padding: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #00f5ff, #ff61f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.quote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Services Section */
+.services {
+  padding: 60px 20px;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.services p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+/* Team Section */
+.team {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.member {
+  max-width: 150px;
+  text-align: center;
+}
+
+.member img {
+  width: 100%;
+  object-fit: cover;
+  height: 250px;
+  border-radius: 8%;
+  border: 2px solid #000000aa;
+  transition: transform 0.3s;
+}
+
+.member img:hover {
+  transform: scale(1.1);
+}
+
+.member h3 {
+  margin: 12px 0 6px;
+  font-size: 1.1rem;
+}
+
+.icons a {
+  color: #555;
+  margin: 0 6px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.icons a:hover {
+  color: #00f5ff;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}

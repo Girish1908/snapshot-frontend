@@ -1,31 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import API from "../services/api";
 import PhotoCard from "../components/PhotoCard";
 
 const Search = () => {
-  const [query, setQuery] = useState("");
   const [photos, setPhotos] = useState([]);
+  const [params] = useSearchParams();
+  const query = params.get("q");
 
-  const handleSearch = async () => {
-    const res = await API.get(`/photos/search?q=${query}`);
-    setPhotos(res.data);
-  };
+  useEffect(() => {
+    if (query) {
+      API.get(`/photos/search?q=${query}`).then((res) => setPhotos(res.data));
+    }
+  }, [query]);
 
   return (
     <div className="container">
-      <h2>Search</h2>
-      <input
-        type="text"
-        placeholder="Search by tag or username"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        style={{ width: 300 }}
-      />
-      <button onClick={handleSearch}>Search</button>
-
-      <div style={{ marginTop: 20 }}>
-        {photos.map(photo => (
-          <PhotoCard key={photo._id} photo={photo} />
+      <h2>Search Results for: {query}</h2>
+      <div className="photo-grid">
+        {photos.map((photo) => (
+          <div key={photo._id} className="photo-item">
+            <PhotoCard photo={photo} />
+          </div>
         ))}
       </div>
     </div>

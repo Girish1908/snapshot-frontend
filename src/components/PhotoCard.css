@@ -1,0 +1,119 @@
+.photo-card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  break-inside: avoid;
+}
+
+.photo-card:hover {
+  transform: scale(1.02);
+}
+
+.photo-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.photo-card .photo-info {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.photo-card .photo-info strong {
+  font-weight: 600;
+}
+
+.photo-card .caption {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Hover overlay with icons */
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  gap: 30px;
+}
+
+.photo-card:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo-overlay button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.photo-overlay button:hover {
+  transform: scale(1.2);
+}
+
+/* Comment section below image */
+.comment-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.comment-form::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #ccc;
+  margin-top: 10px;
+}
+
+.comment-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.comment-form button {
+  align-self: flex-end;
+  padding: 5px 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.comment-form button:hover {
+  background: #0056b3;
+}
+
+.comment-list {
+  padding: 0 10px 10px;
+  font-size: 13px;
+}
+
+.comment-list a {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  margin-right: 4px;
+}

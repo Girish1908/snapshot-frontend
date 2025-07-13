@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
+import './Login.css'; // Assuming you have a CSS file for styling
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -20,8 +21,9 @@ const Login = () => {
 
   return (
     <div className="container">
-      <h2>Login</h2>
+       
       <form onSubmit={handleSubmit} style={{ maxWidth: 300 }}>
+        <h2>Login</h2>
         <input
           type="email"
           placeholder="Email"
@@ -38,11 +40,15 @@ const Login = () => {
           required
           style={{ width: "100%", marginBottom: 10 }}
         />
-        <button type="submit">Login</button>
         <p><a href="/forgot-password">Forgot Password?</a></p>
+        <button type="submit">Login</button>
+         
+        <div className="footer">
+          <p>Don't have an account? <a href="/signup">Signup</a></p>
+        </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Login;

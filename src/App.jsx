@@ -11,13 +11,16 @@ import UserProfile from "./pages/UserProfile";
 import Notifications from "./pages/Notification";
 import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
+import ContactUs from "./pages/ContactUs";
+import Welcome from "./pages/Welcome";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/feed" element={<Feed />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/upload" element={
@@ -34,7 +37,8 @@ function App() {
         <Route path="/user/:id" element={<UserProfile />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/contact" element={<ContactUs />}/>
       </Routes>
     </Router>
   );

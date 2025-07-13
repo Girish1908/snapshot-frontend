@@ -1,0 +1,181 @@
+/* Modern frosted glass navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.2rem;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1200px;
+  position: sticky;
+  top: 10px;
+  z-index: 1000;
+  animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand Name */
+.navbar > a {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(to right, #00f5ff, #ff61f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.navbar > a:hover {
+  transform: scale(1.08);
+}
+
+/* Navigation Links */
+.navbar div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar div a {
+  position: relative;
+  padding: 8px 14px;
+  color: #070707;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.navbar div a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 0%;
+  height: 2px;
+  /* background: linear-gradient(to right, #00f5ff, #ff61f6);
+  transition: 0.4s ease; */
+  border-radius: 2px;
+}
+
+.navbar div a:hover::after {
+  width: 100%;
+}
+
+.navbar div a:hover {
+  color: #fff;
+  transform: translateY(-1px);
+   background: linear-gradient(to right, #00f5ff, #ff61f6);
+}
+
+/* Logout Button */
+.navbar button {
+  background: linear-gradient(to right, #00f5ff, #ff61f6);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 0, 255, 0.3);
+}
+
+.navbar button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 12px #ff00ff;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .navbar div a,
+  .navbar button {
+    width: 100%;
+    
+  }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid black;
+  border-radius: 14px;
+  padding: 4px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 8px 12px;
+  width: 150px;
+  font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+  color: black;
+}
+
+.search-bar button {
+  background: linear-gradient(to right, #00f5ff, #ff61f6);
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.search-bar button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Responsive Search on Mobile */
+@media screen and (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+}

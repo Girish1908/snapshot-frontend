@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import PhotoCard from "../components/PhotoCard";
+import "../pages/Feed.css"; 
 
 const Feed = () => {
   const [photos, setPhotos] = useState([]);
@@ -12,11 +13,13 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h2>Latest Photos</h2>
-      {photos.map(photo => (
-        <PhotoCard key={photo._id} photo={photo} />
-      ))}
+    <div className="feed-container">
+      <h2 className="feed-title">Explore</h2>
+      <div className="masonry">
+        {photos.map(photo => (
+          <PhotoCard key={photo._id} photo={photo} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,102 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container itself, but not its content */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between; /* Keep edit button on the right */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1; 
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-profile-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.edit-profile-button:hover {
+  background-color: #0056b3;
+}
+
+/* Masonry-style photo layout */
+.photo-grid {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Delete button on photo */
+.delete-photo-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-photo-button:hover {
+  background-color: red;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .photo-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    column-count: 1;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edit-profile-button {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .delete-photo-button {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}

@@ -1,0 +1,116 @@
+/* Import matching font */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+*{
+    scrollbar-width: none;
+}
+.container {
+  background: radial-gradient(circle at 20% 20%, #ffffff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 4rem;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(84, 192, 192, 0.498);
+  border: 1.5px solid rgb(0, 0, 0);
+  backdrop-filter: blur(14px);
+  width: 100%;
+  max-width: 350px;
+  animation: popUp 0.8s ease;
+  color: #fff;
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  background: linear-gradient(to right, #00f5ff, #ff61f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inputs */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  margin-left: -10px;
+  background: rgba(255, 255, 255, 0.114);
+  border: 1px solid rgba(0, 0, 0, 0.79);
+  color: rgb(14, 13, 13);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+form input:focus {
+  border-color: #00f5ff;
+  box-shadow: 0 0 10px #00f5ff88;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Submit Button */
+form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00f5ff, #ff61f6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 0, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(255, 0, 255, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  form {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+.footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.footer p {
+  color: #000000;
+}
+.footer a {
+  color: #00f5ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer a:hover {
+  color: #ff61f6;
+}
